@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>¡No, esto no es coca, papi! · FRCU Dev</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+    body {
+      background-color: #eee;
+      font-family: 'PT Sans', Arial, sans-serif;
+      color: #333;
+      margin: 0;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .soundboard__title {
+      background-color: #222;
+      background-size: cover;
+      color: #fff;
+      padding: 3em 0;
+      margin: 0;
+      border-top-left-radius: .5rem;
+      border-top-right-radius: .5rem;
+      text-align: center;
+    }
+
+    #coca-papi .soundboard__title {
+      background-image:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url('./images/esto-no-es-coca-papi.jpg');
+      background-position: center 40%;
+    }
+
+    .sounds {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sounds__item {
+      background-color: #fff;
+      cursor: pointer;
+      padding: .7em;
+      transition: all .15s ease;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .sounds__item:not(:last-child) {
+      margin-bottom: 1px;
+    }
+
+    .sounds__item:last-child {
+      border-bottom-left-radius: .5rem;
+      border-bottom-right-radius: .5rem;
+    }
+
+    .sounds__item--is-playing {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .sounds__key {
+      background-color: #eee;
+      color: #333;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+      font-weight: bold;
+      height: 3em;
+      width: 3em;
+      border-radius: .2em;
+      flex: 0 0 3em;
+    }
+
+    .sounds__label {
+      margin-left: .7em;
+    }
+
+    .footer {
+      color: #666;
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    .footer > .heart-icon {
+      fill: #bd5858;
+      vertical-align: middle;
+      width: 1em;
+    }
+
+    .footer > a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer > a:hover {
+      color: #333;
+      border-bottom: 2px solid #bd5858;
+    }
+
+    @media (min-width: 45em) {
+      #coca-papi .soundboard__title {
+        background-position: center 33%;
+      }
+
+      .sounds {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+      }
+
+      .sounds__item:last-child {
+        border-radius: 0;
+        margin-bottom: 1px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="soundboard" id="coca-papi">
+      <h2 class="soundboard__title">¡No, esto no es coca, papi!</h2>
+      <ul class="sounds">
+        <li class="sounds__item" data-key="81"><kbd class="sounds__key">Q</kbd><span class="sounds__label">¡No, esto no es coca, papi!</span></li>
+        <li class="sounds__item" data-key="87"><kbd class="sounds__key">W</kbd><span class="sounds__label">Mmm, ujuju</span></li>
+        <li class="sounds__item" data-key="69"><kbd class="sounds__key">E</kbd><span class="sounds__label">La campe del tío, ¡mirá!</span></li>
+        <li class="sounds__item" data-key="82"><kbd class="sounds__key">R</kbd><span class="sounds__label">Jujujujuju</span></li>
+        <li class="sounds__item" data-key="65"><kbd class="sounds__key">A</kbd><span class="sounds__label">Sabias palabras del tío</span></li>
+        <li class="sounds__item" data-key="83"><kbd class="sounds__key">S</kbd><span class="sounds__label">No, no es tuyo, papi, nooo...</span></li>
+        <li class="sounds__item" data-key="68"><kbd class="sounds__key">D</kbd><span class="sounds__label">Mirá Kevin, jojo, coca</span></li>
+        <li class="sounds__item" data-key="70"><kbd class="sounds__key">F</kbd><span class="sounds__label">Juju</span></li>
+        <li class="sounds__item" data-key="90"><kbd class="sounds__key">Z</kbd><span class="sounds__label">Sí pero... ¿y la campera?</span></li>
+        <li class="sounds__item" data-key="88"><kbd class="sounds__key">X</kbd><span class="sounds__label">La campera papi</span></li>
+      </ul>
+    </div>
+    <footer class="footer">
+      Hecho con
+      <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+      por <a href="https://frcu.dev"><strong>FRCU Dev</strong></a>
+    </footer>
+  </div>
+
+  <audio data-key="81" src="./sounds/esto-no-es-coca-papi.mp3"></audio>
+  <audio data-key="87" src="./sounds/mmm-ujuju.mp3"></audio>
+  <audio data-key="69" src="./sounds/la-campe-del-tío-mira.mp3"></audio>
+  <audio data-key="82" src="./sounds/jujujujuju.mp3"></audio>
+  <audio data-key="65" src="./sounds/sabias-palabras-del-tío.mp3"></audio>
+  <audio data-key="83" src="./sounds/no-no-es-tuyo-papi-nooo.mp3"></audio>
+  <audio data-key="68" src="./sounds/mira-kevin-jojo-coca.mp3"></audio>
+  <audio data-key="70" src="./sounds/juju.mp3"></audio>
+  <audio data-key="90" src="./sounds/si-pero-y-la-campera.mp3"></audio>
+  <audio data-key="88" src="./sounds/la-campera-papi.mp3"></audio>
+
+  <script>
+    (function() {
+  
+      function keyDownHandler(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+        const key = document.querySelector(`li[data-key="${e.keyCode}"]`)
+        playSound(audio, key)
+      }
+      
+      function clickHandler(e) {
+        const audio = document.querySelector(`audio[data-key="${this.dataset.key}"]`)
+        const key = document.querySelector(`li[data-key="${this.dataset.key}"]`)
+        playSound(audio, key)
+      }
+      
+      function playSound(audio, key) {    
+        if (!audio) return
+        key.classList.add('sounds__item--is-playing')
+        audio.currentTime = 0
+        audio.play()
+      }
+      
+      function removeTransition(e) {
+        e.target.classList.remove('sounds__item--is-playing')
+      }
+
+      const soundsItems = Array.from(document.querySelectorAll('.sounds__item'))
+
+      soundsItems.forEach(sound => {
+        sound.addEventListener('click', clickHandler)
+        sound.addEventListener('transitionend', removeTransition)
+      })
+
+      window.addEventListener('keydown', keyDownHandler)
+    })()
+  </script>
+</body>
+</html>
